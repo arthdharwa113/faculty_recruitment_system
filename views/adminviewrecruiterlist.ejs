@@ -1,0 +1,34 @@
+<%- include('./adminheader.ejs')%>
+<br><br>
+<center>
+    <h2>Recruiter List</h2>
+    <br><br>
+    <table width="80%" style="border:2px solid black" align="center" cellspacing="4" cellpadding="6">
+        <tr bgcolor="black">
+            <th style="color:white">Name</th>
+            <th style="color:white">Recruiter</th>
+            <th style="color:white;text-align: center;">_id</th>
+            <!-- <th>Password</th> -->
+            <th style="color:white">Contact</th>
+            <th style="color:white">Address</th>
+            <th style="color:white">Email Verify</th>
+            <th style="color:white">Admin Verify</th>
+            <th style="color:white">Status</th>
+        </tr>
+        <%obj.forEach(function(list){%>
+            <tr bgcolor="whitesmoke">
+                <td><%= list.name%></td>
+                <td><%= list.recruiter%></td>
+                <td><%= list._id%></td>
+                <!-- <td><%= list.password%></td> -->
+                <td><%= list.contact%></td>
+                <td><%= list.address%></td>
+                <td><%= list.emailverify%></td>
+                <td><a href="/admin/adminverifyrecruiter?email=<%=list._id %>&adminemail=<%= email%>"><%= list.adminverify%></a></td>
+                <td><%= list.status%></td>
+            </tr>
+        <%});%>
+    </table>
+</center>
+<%- include('./adminfooter.ejs')%>
+<%- include('./javascript.ejs')%>

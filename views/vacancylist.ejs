@@ -1,0 +1,41 @@
+<%- include('./adminheader.ejs')%>
+<br><br>
+<center>
+    <h2>Vacancy List</h2>
+    <br><br>
+    <table width="80%" style="border:2px solid black" align="center" cellspacing="4" cellpadding="6">
+        <tr bgcolor="black">
+            <th style="color:white">Post</th>
+            <th style="color:white">Subject</th>
+            <th style="color:white;text-align: center;">Location</th>
+            <!-- <th>Password</th> -->
+            <th style="color:white">Qualification</th>
+            <th style="color:white">Vacancy</th>
+            <th style="color:white">Salary</th>
+            <th style="color:white">Start Date</th>
+            <th style="color:white">Last Date</th>
+            <th style="color:white">Email</th>
+            <th style="color:white">Recruiter</th>
+            <th style="color:white">Recruiter Name</th>
+           
+        </tr>
+        <%obj.forEach(function(list){%>
+            <tr bgcolor="whitesmoke">
+                <td><%= list.post%></td>
+                <td><%= list.subject%></td>
+                <td><%= list.location%></td>
+                <!-- <td><%= list.password%></td> -->
+                <td><%= list.qualification%></td>
+                <td><%= list.vacancy%></td>
+                <td><%= list.salary%></td>
+                <td><%= list.advdate%></td>
+                <td><%= list.lastdate%></td>
+                <td><%= list.email%></td>
+                <td><%= list.recruiter%></td>
+                <td><%= list.recruitername%></td>
+                
+        <%});%>
+    </table>
+</center>
+<%- include('./adminfooter.ejs')%>
+<%- include('./javascript.ejs')%>
